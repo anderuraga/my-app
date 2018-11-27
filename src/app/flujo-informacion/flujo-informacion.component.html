@@ -1,35 +1,50 @@
-<h2>{{titulo}}</h2>>
-
-<img src="assets/imgs/flujo.png" alt="Diagrama del flujo de la informacion en Angular" />
-
-<h3>Propiedades</h3>
-<p>Era el caso de la propiedad "hidden" que usamos para mostrar / ocultar determinados elementos. En este
-  caso, hidden no es una propiedad estándar del HTML, sino que está generada por Angular 2 y disponible
-  para aplicar tanto en etiquetas HTML comunes como en componentes personalizados.</p>
-<p [hidden]="!visible">Adiós</p>
-
-<p>También podríamos aplicar valores a atributos del HTML con datos que están en propiedades del modelo,
-  aunque no soporta todos los atributos del HTML estándar. Por ejemplo, podríamos asignar una clase CSS
-  (class) con lo que tuviésemos en una propiedad del modelo llamada "clase".</p>
-<div [class]="clase">Una clase marcada por el modelo</div>
-<p>Lo que de momento debe quedar claro es que las propiedades van desde el modelo a la vista y, por tanto, si
-  se modifica el valor de una propiedad en el modelo, también se modificará la vista.</p>
+<h2>{{titulo}}</h2>
 
 
-<h3>Expresiones</h3>
-<p>No solo sirven para pintar variables desde el modelo</p>
-<p>Tambien permiten usar expreciones dentro:  1 + 1 = {{1+1}}</p>
+<div class="grid-container">
+  
+  <div class="item1">
+    <img src="assets/imgs/flujo.png" alt="Diagrama del flujo de la informacion en Angular" />
+  </div>
 
-<h3>Eventos</h3>
-<button (click)="showHide()">{{textoBoton}} adios</button>
-<p [hidden]="!visible">Adiós</p>
+  <div class="item2">
+    <h3>Propiedades</h3>
+    <p>Era el caso de la propiedad "hidden" que usamos para mostrar / ocultar determinados elementos. En este
+      caso, hidden no es una propiedad estándar del HTML, sino que está generada por Angular 2 y disponible
+      para aplicar tanto en etiquetas HTML comunes como en componentes personalizados.</p>
+    <p [hidden]="!visible">Adiós</p>
+  
+    <p>También podríamos aplicar valores a atributos del HTML con datos que están en propiedades del modelo,
+      aunque no soporta todos los atributos del HTML estándar. Por ejemplo, podríamos asignar una clase CSS
+      (class) con lo que tuviésemos en una propiedad del modelo llamada "clase".</p>
+    <div [class]="clase">Una clase marcada por el modelo</div>
+    <p>Lo que de momento debe quedar claro es que las propiedades van desde el modelo a la vista y, por tanto, si
+      se modifica el valor de una propiedad en el modelo, también se modificará la vista.</p>
+  </div>
 
-<h3>Doble Bindding o Banaba In A Box</h3>
-<p><b>importante</b> ten muy en cuenta que para poder usar ngModel necesitas importar un módulo
-  adicional, disponible mediante el propio Angular, pero que no viene cargado por defecto. Esto ocurre
-  desde Angular 4. Ahora, cuando quieras usar la directiva ngModel tendrás que hacer el import de
-  <b>FormsModule</b> dentro de <b>app.module.ts</b> </p>
- 
- <input type="text" [(ngModel)]="nombre">
- <br>
- Nombre: {{nombre}}
+  <div class="item3">
+    <h3>Expresiones</h3>
+    <p>No solo sirven para pintar variables desde el modelo</p>
+    <p>Tambien permiten usar expreciones dentro:  1 + 1 = {{1+1}}</p>
+  </div>
+
+  <div class="item4">
+    <h3>Eventos</h3>
+    <button (click)="showHide()">{{textoBoton}} adios</button>
+    <p [hidden]="!visible">Adiós</p>
+  </div>  
+
+  <div class="item5">
+    <h3>Doble Bindding o Banaba In A Box</h3>
+    <p><b>importante</b> ten muy en cuenta que para poder usar ngModel necesitas importar un módulo
+      adicional, disponible mediante el propio Angular, pero que no viene cargado por defecto. Esto ocurre
+      desde Angular 4. Ahora, cuando quieras usar la directiva ngModel tendrás que hacer el import de
+      <b>FormsModule</b> dentro de <b>app.module.ts</b> </p>
+    
+    <input type="text" [(ngModel)]="nombre">
+    <br>
+    Nombre: {{nombre}}
+  </div>  
+
+</div>
+<!-- grid-container -->
