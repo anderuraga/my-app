@@ -5,10 +5,12 @@ import { FlujoInformacionComponent } from './components/flujo-informacion/flujo-
 import { HomeComponent } from './components/home/home.component';
 import { Page404Component } from './components/page404/page404.component';
 import { VideojuegoDetalleComponent } from './components/videojuego-detalle/videojuego-detalle.component';
+import { PipeComponent } from './components/pipe/pipe.component';
 
 const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'fruta', component: FrutaComponent},
+    { path: 'pipe', component: PipeComponent},
     { path: 'videojuego-detalle', component: VideojuegoDetalleComponent },
     { path: 'flujo', component: FlujoInformacionComponent},
     { path: '',  redirectTo: '/home',  pathMatch: 'full'},

@@ -1,0 +1,46 @@
+<h2 class="text-info">Pipes</h2>
+<a href="https://angular.io/api?type=pipe" target="_blank">API para Pipes</a>
+<a href="https://angular.io/guide/pipes" target="_blank">Documentación Oficial de Angular sobre Pipes</a>
+<p>En Angular 2 los Pipes o Filtros nos permiten alterar la forma en la que se van a visualizar los datos. Podemos los definidos por Angular o crear los nuestros propios.</p>
+
+<h3 class="text-info">Pipes de Angular</h3>
+
+<p><b>uppercase</b> {{ "TodoEnMayusculas" | uppercase }}</p>
+<p><b>lowercase</b> {{ "TodoEnMinusyusculas" | lowercase }}</p>
+<p><b>Fecha sin pipe</b>  {{ fecha }}</p>
+<p><b>Fecha con pipe</b>  {{ fecha | date }}</p>
+<p><b>Fecha date:"dd-MM-yyyy"</b>  {{ fecha | date:"dd-MM-yyyy" }}</p>
+<p><b>Numero sin pipe</b>  {{ numero }}</p>
+<p><b>Numero con pipe number</b>  {{ numero | number }}</p>
+<p><b>Numero con pipe number:'1.2-2'</b>  {{ numero | number:'1.2-2' }}</p>
+<p><b>Numero con pipe number:'1.2-2':'es-ES'</b>   <span class="text-danger">*No tenemos locale para Castellano, mirar consola el error</span></p>
+
+<h3 class="text-info">Pipes Propios</h3>
+<div class="row">
+  <div class="col">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/bDcD0Cqx6io" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div class="col">
+    <h4>Datos con pipe JSON</h4>
+    {{ videojuegos | json }}
+  </div>  
+</div>
+
+<div class="row">
+
+  <div class="col">
+    <h4>Listado Videojuegos</h4>
+    <ol>
+      <li *ngFor="let v of videojuegos">{{v.titulo}} - {{v.alquilado}}</li>
+    </ol>
+  </div>
+  <div class="col">
+    <h4>Listado Alquilados</h4>
+    <li *ngFor="let v of videojuegos| alquilado:true">{{v.titulo}} - {{v.alquilado}}</li>
+  </div>
+  <div class="col">
+    <h4>Listado Disponibles</h4>
+    <li *ngFor="let v of videojuegos| alquilado:false">{{v.titulo}} - {{v.alquilado}}</li>
+  </div>
+
+</div>
