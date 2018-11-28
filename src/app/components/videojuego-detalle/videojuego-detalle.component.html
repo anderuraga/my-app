@@ -1,0 +1,32 @@
+<h2 class="text-info">{{titulo | uppercase }}</h2>
+<p>Componente para aprender usar una CLASE o POJO <b>model/videojuego.ts</b>. Vamos a guardar todas las clases en la carpeta <b>model</b></p>
+
+<div class="row">
+  <div class="col">
+    <h3>Detalle del Objeto</h3>
+    <p>Usamos el <b>pipe json</b> para mostrar el objeto, siempre para depurar</p>
+    {{videojuego | json}}
+    <p></p>
+    <p></p>
+    <p><b>Sin usar el pipe:</b></p>
+    {{videojuego}}
+  </div>
+
+  <div class="col">
+    <h3>Maquetación del Objeto</h3>
+    <div class="card" style="width: 18rem;">  
+      <span class="badge badge-{{(videojuego.alquilado)?'danger':'success'}}">
+        {{(videojuego.alquilado)?'Alquilado':'Disponible'}}
+      </span>
+      <span class="badge badge-secondary">{{videojuego.anyo}}</span>
+      <img class="card-img-top" src="{{videojuego.imagen}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title text-info">{{videojuego.titulo}}</h5>
+        <p class="text-muted float-right">{{videojuego.precio}} €</p>
+        <p class="card-text">{{videojuego.descripcion}}</p>      
+      </div>
+    </div>
+  </div>
+
+</div><!-- <div class="row"> -->
+ 
