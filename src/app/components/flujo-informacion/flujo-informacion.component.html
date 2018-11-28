@@ -1,13 +1,12 @@
 <h2>{{titulo}}</h2>
 
 
-<div class="grid-container">
-  
-  <div class="item1">
-    <img src="assets/imgs/flujo.png" alt="Diagrama del flujo de la informacion en Angular" />
-  </div>
+<div class="row">  
+    <img class="img-fluid" src="assets/imgs/flujo.png" alt="Diagrama del flujo de la informacion en Angular" />  
+</div>  
 
-  <div class="item2">
+<div class="row">  
+  <div class="col">
     <h3>Propiedades</h3>
     <p>Era el caso de la propiedad "hidden" que usamos para mostrar / ocultar determinados elementos. En este
       caso, hidden no es una propiedad estándar del HTML, sino que está generada por Angular 2 y disponible
@@ -22,19 +21,15 @@
       se modifica el valor de una propiedad en el modelo, también se modificará la vista.</p>
   </div>
 
-  <div class="item3">
+  <div class="col">
     <h3>Expresiones</h3>
     <p>No solo sirven para pintar variables desde el modelo</p>
     <p>Tambien permiten usar expreciones dentro:  1 + 1 = {{1+1}}</p>
   </div>
 
-  <div class="item4">
-    <h3>Eventos</h3>
-    <button (click)="showHide()">{{textoBoton}} adios</button>
-    <p [hidden]="!visible">Adiós</p>
-  </div>  
 
-  <div class="item5">
+
+  <div class="col">
     <h3>Doble Bindding o Banaba In A Box</h3>
     <p><b>importante</b> ten muy en cuenta que para poder usar ngModel necesitas importar un módulo
       adicional, disponible mediante el propio Angular, pero que no viene cargado por defecto. Esto ocurre
@@ -46,5 +41,11 @@
     Nombre: {{nombre}}
   </div>  
 
+  <div class="col">
+    <h3>Eventos</h3>
+    <button (click)="showHide()">{{textoBoton}} adios</button>
+    <p [hidden]="!visible">Adiós</p>
+  </div>  
+
 </div>
-<!-- grid-container -->
+<!-- row -->
