@@ -10,6 +10,11 @@
     <p *ngIf="fruta.oferta" class="card-text"><del>{{fruta.precio}}</del> {{(fruta.precio - (fruta.precio*fruta.descuento)/100) | number:'1.2-2'}} €</p>
     <button (click)="comprar()" class="btn btn-block btn-outline-primary">Comprar</button>
   </div>
+
+  <!-- comparador -->
+  <div *ngIf="fruta2">
+    Comparador
+  </div>
 </div>
 
 

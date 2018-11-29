@@ -9,6 +9,7 @@ import { Fruta } from 'src/app/model/fruta';
 export class FrutaCardComponent implements OnInit {
 
    _fruta: Fruta;
+   _fruta2?: Fruta; // ? opcional
 
   @Input('_fruta') set fruta(value: Fruta) {
     if (value) {
@@ -21,6 +22,14 @@ export class FrutaCardComponent implements OnInit {
 
   get fruta(): Fruta {
     return this._fruta;
+  }
+
+  @Input('_fruta2') set fruta2 (value: Fruta) {
+    this._fruta2 = value;
+  }
+
+  get fruta2(): Fruta {
+    return this._fruta2;
   }
 
   constructor() {
