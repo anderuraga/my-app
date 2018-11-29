@@ -9,6 +9,7 @@ import { Page404Component } from './components/page404/page404.component';
 import { VideojuegoDetalleComponent } from './components/videojuego-detalle/videojuego-detalle.component';
 import { PipeComponent } from './components/pipe/pipe.component';
 import { EjercicioFrutasComponent } from './components/ejercicio-frutas/ejercicio-frutas.component';
+import { ComparadorComponent } from './components/comparador/comparador.component';
 
 const routes: Routes = [
     { path: 'home', component: HomeComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
     { path: 'arrays', component: EjercicioFrutasComponent},
     { path: 'videojuego-detalle', component: VideojuegoDetalleComponent },
     { path: 'flujo', component: FlujoInformacionComponent},
+    { path: 'comparador', component: ComparadorComponent},
     { path: '',  redirectTo: '/home',  pathMatch: 'full'},
     { path: '**', component: Page404Component }
 ];

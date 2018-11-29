@@ -16,6 +16,7 @@ import { EjercicioFrutasComponent } from './components/ejercicio-frutas/ejercici
 // Pipes
 import { VideojuegoPipe } from './pipes/videojuego.pipe';
 import { FrutaCardComponent } from './components/fruta-card/fruta-card.component';
+import { ComparadorComponent } from './components/comparador/comparador.component';
 
 // Providers o servicios
 
@@ -31,7 +32,8 @@ import { FrutaCardComponent } from './components/fruta-card/fruta-card.component
     PipeComponent,
     VideojuegoPipe,
     EjercicioFrutasComponent,
-    FrutaCardComponent
+    FrutaCardComponent,
+    ComparadorComponent
   ],
   imports: [
     BrowserModule,
