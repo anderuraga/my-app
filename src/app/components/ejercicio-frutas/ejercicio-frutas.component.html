@@ -1,0 +1,70 @@
+<div class="text-left">
+    <h2 class="text-center">Ejercicios de frutas</h2>
+  
+    <p><a href="http://www.campus.formacion.ipartek.com/moodle/mod/page/view.php?id=1254" target="_blank">Teoria Programación Funcional con Arrays</a></p>
+
+    <h3>Enunciado</h3>
+    <ol>
+      <li>Traducir json de frutas en un objeto</li>
+      <li>Sacar por pantalla las frutas</li>
+      <li>Guardar en una variable el precio total de todas las frutas</li>
+      <li>Crear un array solo con los nombres (Array de strings)</li>
+      <li>Conseguir array solo con las frutas en oferta</li>
+      <li>Conseguir array solo con las frutas de color rojo</li>
+      <li>Conseguir primera fruta en oferta <b>{{primeraFrutaOferta.nombre}}</b></li>
+      <li>Conseguir primera fruta en oferta de color verde  <b>{{primeraFrutaOfertaVerde.nombre}}</b></li>
+    </ol>
+  
+    <hr>
+  
+    <h5>1. Traducir json de frutas en un objeto</h5>
+    <p>{{frutas | json}}</p>
+  
+    <hr>
+  
+    <h5>2. Sacar por pantalla las frutas</h5>
+    <div class="row">
+      <div class="col" *ngFor="let fruta of frutas">
+        <div class="card" style="width: 18rem;">
+            
+          <img class="card-img-top" src="{{fruta.imagen}}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">
+              {{fruta.nombre}}
+            </h5>
+            <p class="card-text">Colores: {{fruta.colores}}</p>
+            <p class="card-text">Calorías: {{fruta.calorias}}</p>
+           </div>
+        </div>
+      </div>
+    </div>
+  
+    <hr>
+  
+    <h5>3. Guardar en una variable el precio total de todas las frutas</h5>
+    <p><b>Precio total de las frutas: </b> {{precioTotal}} &euro;</p>
+  
+    <hr>
+  
+    <h5>4. Crear un array solo con los nombres (Array de strings)</h5>
+    <ol>
+      <li *ngFor="let fruta of nombresFrutas">
+        {{fruta}}
+      </li>
+    </ol>
+  
+    <hr>
+  
+    <h5>5. Conseguir array solo con las frutas en oferta</h5>
+     <li *ngFor="let fruta of frutasOferta">
+        {{fruta.nombre}}
+      </li>
+    
+
+    <p></p>
+  
+    <hr>
+  
+    <h5>6. Conseguir array solo con las frutas de color rojo</h5>
+  
+  </div>

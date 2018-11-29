@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+// Componentes
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FrutaComponent } from './components/fruta/fruta.component';
@@ -10,7 +11,12 @@ import { HomeComponent } from './components/home/home.component';
 import { Page404Component } from './components/page404/page404.component';
 import { VideojuegoDetalleComponent } from './components/videojuego-detalle/videojuego-detalle.component';
 import { PipeComponent } from './components/pipe/pipe.component';
+import { EjercicioFrutasComponent } from './components/ejercicio-frutas/ejercicio-frutas.component';
+
+// Pipes
 import { VideojuegoPipe } from './pipes/videojuego.pipe';
+
+// Providers o servicios
 
 
 @NgModule({
@@ -22,7 +28,8 @@ import { VideojuegoPipe } from './pipes/videojuego.pipe';
     Page404Component,
     VideojuegoDetalleComponent,
     PipeComponent,
-    VideojuegoPipe
+    VideojuegoPipe,
+    EjercicioFrutasComponent
   ],
   imports: [
     BrowserModule,
