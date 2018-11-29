@@ -1,0 +1,17 @@
+{{ fruta | json }}
+
+<div class="card" style="width: 18rem;">
+  <div class="card-head">
+    <img class="card-img-top" src="{{fruta.imagen}}" alt="Card image cap">
+    <span *ngIf="fruta.oferta" class="descuento">{{fruta.descuento}} %</span>
+    <span class="calorias">{{fruta.calorias}} Kcal</span>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{fruta.nombre}}</h5>
+    <p *ngIf="!fruta.oferta" class="card-text">{{fruta.precio}} €</p>
+    <p *ngIf="fruta.oferta" class="card-text"><del>{{fruta.precio}}</del> {{(fruta.precio - (fruta.precio*fruta.descuento)/100) | number:'1.2-2'}} €</p>
+    <button (click)="comprar()" class="btn btn-block btn-outline-primary">Comprar</button>
+  </div>
+</div>
+
+

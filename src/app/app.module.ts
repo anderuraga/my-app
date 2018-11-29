@@ -15,6 +15,7 @@ import { EjercicioFrutasComponent } from './components/ejercicio-frutas/ejercici
 
 // Pipes
 import { VideojuegoPipe } from './pipes/videojuego.pipe';
+import { FrutaCardComponent } from './components/fruta-card/fruta-card.component';
 
 // Providers o servicios
 
@@ -29,7 +30,8 @@ import { VideojuegoPipe } from './pipes/videojuego.pipe';
     VideojuegoDetalleComponent,
     PipeComponent,
     VideojuegoPipe,
-    EjercicioFrutasComponent
+    EjercicioFrutasComponent,
+    FrutaCardComponent
   ],
   imports: [
     BrowserModule,
