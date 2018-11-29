@@ -1,6 +1,11 @@
 .card-head{
     position: relative;
 
+    img{
+        height: 150px;
+        width: auto;
+    }
+
     /* TODO los colores deben estar definidos en styles global y usar variables */
 
     .descuento{

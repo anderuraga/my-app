@@ -25,21 +25,11 @@
     <h5>2. Sacar por pantalla las frutas</h5>
 
 
-    <app-fruta-card></app-fruta-card>
+    <app-fruta-card [_fruta]="undefinedddd" ></app-fruta-card>
 
     <div class="row">
-      <div class="col" *ngFor="let fruta of frutas">
-        <div class="card" style="width: 18rem;">
-            
-          <img class="card-img-top" src="{{fruta.imagen}}" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">
-              {{fruta.nombre}}
-            </h5>
-            <p class="card-text">Colores: {{fruta.colores}}</p>
-            <p class="card-text">Calorías: {{fruta.calorias}}</p>
-           </div>
-        </div>
+      <div class="col-3" *ngFor="let f of frutas">
+          <app-fruta-card [_fruta]="f" ></app-fruta-card>
       </div>
     </div>
   
