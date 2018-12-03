@@ -1,6 +1,8 @@
+// Modulos de Angular
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 // Componentes
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +14,7 @@ import { Page404Component } from './components/page404/page404.component';
 import { VideojuegoDetalleComponent } from './components/videojuego-detalle/videojuego-detalle.component';
 import { PipeComponent } from './components/pipe/pipe.component';
 import { EjercicioFrutasComponent } from './components/ejercicio-frutas/ejercicio-frutas.component';
+import { TareaComponent } from './components/tarea/tarea.component';
 
 // Pipes
 import { VideojuegoPipe } from './pipes/videojuego.pipe';
@@ -21,6 +24,8 @@ import { ComparadorComponent } from './components/comparador/comparador.componen
 
 // Providers o servicios
 import { FrutaService } from './providers/fruta.service';
+import { TareaService } from './providers/tarea.service';
+
 
 
 @NgModule({
@@ -35,15 +40,18 @@ import { FrutaService } from './providers/fruta.service';
     VideojuegoPipe,
     EjercicioFrutasComponent,
     FrutaCardComponent,
-    ComparadorComponent
+    ComparadorComponent,
+    TareaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule     // peticiones Http
   ],
   providers: [
-    FrutaService
+    FrutaService,
+    TareaService
   ],
   bootstrap: [AppComponent]
 })

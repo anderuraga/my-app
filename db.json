@@ -1,0 +1,14 @@
+{
+    "posts": [
+      { "id": 1, "title": "json-server", "author": "typicode" }
+    ],
+    "comments": [
+      { "id": 1, "body": "some comment", "postId": 1 }
+    ],
+    "profile": { "name": "typicode" },
+    "tareas":[
+        {"id": 1 , "titulo": "cambiar Readme", "terminado": false },
+        {"id": 2 , "titulo": "Tarea Terminada", "terminado": true },
+        {"id": 3 , "titulo": "Formulario Reactivos", "terminado": false }
+    ]
+  }

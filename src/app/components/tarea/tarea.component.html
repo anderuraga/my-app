@@ -1,0 +1,7 @@
+<p>Ejemplo de crear un <b>Provider</b> o Service para realizar las operaciones de CRUD contra un <b>Servicio-Rest</b></p>
+
+{{ tareas | json }}
+
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let tarea of tareas">{{tarea | json}}</li>    
+  </ul>
