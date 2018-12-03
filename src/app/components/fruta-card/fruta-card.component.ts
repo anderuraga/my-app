@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output , EventEmitter } from '@angular/core';
 import { Fruta } from 'src/app/model/fruta';
 
 @Component({
@@ -32,6 +32,9 @@ export class FrutaCardComponent implements OnInit {
     return this._fruta2;
   }
 
+  // registrar evento de salida
+  @Output() clikCompra = new EventEmitter();
+
   constructor() {
     console.trace('FrutaCardComponent constructor');
     /*
@@ -53,8 +56,10 @@ export class FrutaCardComponent implements OnInit {
   comprar() {
     console.trace('FrutaCardComponent comprar');
     alert(`Lo sentimos pero de momento detemos esta opcion deshabilitada ## ${this.fruta.nombre} ## `);
-    // TODO hacerlo con A
-    // event.preventDefault();
+
+    // Emitimos eventos al componente padre y enviamos parametro 'frutaClick'
+    this.clikCompra.emit( { frutaClick : this.fruta } );
+
   }
 
 

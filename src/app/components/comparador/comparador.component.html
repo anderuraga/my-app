@@ -12,8 +12,13 @@
 
   <div class="col-8">
     <div class="row">
-        <div class="col-6"><app-fruta-card [_fruta]="f1" [_fruta2]="f2"></app-fruta-card></div>
-        <div class="col-6"><app-fruta-card [_fruta]="f2" [_fruta2]="f1"></app-fruta-card></div>
+        <div class="col">
+            <p>Registrar Eventos <b>@Ouput</b>. El componente padre puede recibir eventos del componente hijo. Mirar consola.</p>
+        </div>
+    </div>    
+    <div class="row">
+        <div class="col-6"><app-fruta-card [_fruta]="f1" [_fruta2]="f2" (clikCompra)="actualizarCarro($event)"></app-fruta-card></div>
+        <div class="col-6"><app-fruta-card [_fruta]="f2" [_fruta2]="f1" (clikCompra)="actualizarCarro($event)"></app-fruta-card></div>        
      </div> 
   </div>
 

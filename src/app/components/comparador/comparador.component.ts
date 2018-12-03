@@ -34,6 +34,11 @@ export class ComparadorComponent implements OnInit {
     this.f1 = fruta;
   }
 
+  actualizarCarro( event: Event) {
+    console.debug('ComparadorComponent actualizarCarro recibimos evento del componente hijo');
+    console.debug('Parametro frutaClick = %o' , event['frutaClick'] );
+  }
+
   loadFrutas() {
     console.trace('ComparadorComponent loadFrutas');
     let f: Fruta;
