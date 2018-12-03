@@ -18,7 +18,9 @@ import { VideojuegoPipe } from './pipes/videojuego.pipe';
 import { FrutaCardComponent } from './components/fruta-card/fruta-card.component';
 import { ComparadorComponent } from './components/comparador/comparador.component';
 
+
 // Providers o servicios
+import { FrutaService } from './providers/fruta.service';
 
 
 @NgModule({
@@ -40,7 +42,9 @@ import { ComparadorComponent } from './components/comparador/comparador.componen
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    FrutaService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
