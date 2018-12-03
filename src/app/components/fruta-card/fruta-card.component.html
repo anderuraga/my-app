@@ -13,8 +13,8 @@
 
   <!-- comparador -->
   <div *ngIf="fruta2">
-    <p>Precio <span class="{{(fruta.precio - fruta2.precio > 0) ? 'positivo' : 'negativo'}}">{{fruta.precio - fruta2.precio}}</span> €</p>
-    <p>Calorias <span class="{{(fruta.precio - fruta2.precio > 0) ? 'negativo' : 'positivo'}}">{{fruta.calorias - fruta2.calorias}}</span> Kcal</p>
+    <p>Precio <span class="{{(fruta.precio - fruta2.precio > 0) ? 'positivo' : 'negativo'}}">{{fruta.precio - fruta2.precio | number:'1.2-2'}}</span> €</p>
+    <p>Calorias <span class="{{(fruta.precio - fruta2.precio > 0) ? 'negativo' : 'positivo'}}">{{fruta.calorias - fruta2.calorias | number:'1.2-2'}}</span> Kcal</p>
   </div>
 </div>
 
