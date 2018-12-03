@@ -17,9 +17,35 @@
         </div>
     </div>    
     <div class="row">
-        <div class="col-6"><app-fruta-card [_fruta]="f1" [_fruta2]="f2" (clikCompra)="actualizarCarro($event)"></app-fruta-card></div>
-        <div class="col-6"><app-fruta-card [_fruta]="f2" [_fruta2]="f1" (clikCompra)="actualizarCarro($event)"></app-fruta-card></div>        
+        <div class="col-5"><app-fruta-card [_fruta]="f1" [_fruta2]="f2" (clikCompra)="actualizarCarro($event)"></app-fruta-card></div>
+        <div class="col-5"><app-fruta-card [_fruta]="f2" [_fruta2]="f1" (clikCompra)="actualizarCarro($event)"></app-fruta-card></div>        
+        
+        
+        
      </div> 
   </div>
+
+  <div class="col-2 carrito">
+    <h6>Carrito Compra</h6>
+    <p>TOTAL <span>{{getTotal() | number:'1.2-2'}} €</span></p>
+    <ul class="list-group">
+        <li *ngFor="let p of carrito, let i = index" class="list-group-item">
+            <span (click)="eliminarProducto(p,i)" class="badge badge-danger float-right">X</span>
+            <p>
+                <img src="{{p.imagen}}" alt="imagen de la fruta {{ p.nombre }}">
+                <span class="nombre">{{ p.nombre }}</span><br>
+                <span class="precio">{{ p.precio | number:'1.2-2' }} €</span>
+            </p>
+            <p>
+                <button class="btn" (click)="sumarProducto(p,i)">+</button>
+                <span class="cantidad">{{ p.cantidad }}</span>
+                <button class="btn" (click)="restarProducto(p,i)">-</button>             
+            </p>
+            <p>
+                 total {{ p.precio * p.cantidad  | number:'1.2-2' }} €
+            </p>
+        </li>
+    </ul>
+   </div> 
 
 </div>

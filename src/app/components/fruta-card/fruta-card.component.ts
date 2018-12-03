@@ -55,7 +55,7 @@ export class FrutaCardComponent implements OnInit {
 
   comprar() {
     console.trace('FrutaCardComponent comprar');
-    alert(`Lo sentimos pero de momento detemos esta opcion deshabilitada ## ${this.fruta.nombre} ## `);
+   // alert(`Lo sentimos pero de momento detemos esta opcion deshabilitada ## ${this.fruta.nombre} ## `);
 
     // Emitimos eventos al componente padre y enviamos parametro 'frutaClick'
     this.clikCompra.emit( { frutaClick : this.fruta } );
