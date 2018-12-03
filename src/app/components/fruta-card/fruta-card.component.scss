@@ -1,4 +1,5 @@
 .card-head{
+
     position: relative;
 
     img{
@@ -28,7 +29,16 @@
         right: 10px;
     }
 
+}// .card-head
 
 
+.positivo{
+    color: green;
+    font-weight: 600;
+}
+
+.negativo{
+    color: red;
+    font-weight: 600;
 }
 
