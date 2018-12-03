@@ -10,6 +10,7 @@ import { Tarea } from 'src/app/model/tarea';
 export class TareaComponent implements OnInit {
 
   tareas: Tarea[];
+  nueva: string;
 
   constructor( public tareaService: TareaService ) {
     console.trace('TareaComponent constructor');
@@ -18,13 +19,28 @@ export class TareaComponent implements OnInit {
 
   ngOnInit() {
     console.trace('TareaComponent ngOnInit');
-    // llamar al servicio para carga inicial de las tareas, NO hacerlo en "constructor"
-    // Como this.tareaService.getAll() retorna un Observable, debemos suscribirnos a el
+    this.recargarLista();
+  }
+
+
+  recargarLista(){
+    console.trace('TareaComponent recargarLista');    
+    // this.tareaService.getAll() retorna un Observable, debemos suscribirnos a el
     this.tareaService.getAll().subscribe( data =>{
       console.debug('datos recibidos %o', data);
       this.tareas = data.map( el => el);
     });
-
   }
+
+  nuevaTarea(){
+    console.trace('TareaComponent nuevaTarea');
+    let nuevaTarea = new Tarea();
+    nuevaTarea.titulo = this.nueva;
+    this.tareaService.add( nuevaTarea ).subscribe( data =>{
+      console.debug(data);
+      this.recargarLista();      
+    });
+  }
+
 
 }

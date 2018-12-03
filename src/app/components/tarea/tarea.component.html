@@ -1,7 +1,16 @@
 <p>Ejemplo de crear un <b>Provider</b> o Service para realizar las operaciones de CRUD contra un <b>Servicio-Rest</b></p>
 
-{{ tareas | json }}
+<div class="input-group mb-3">
+    <input type="text" [(ngModel)]="nueva" class="form-control" placeholder="Descripción">
+    <div class="input-group-append">
+      <button (click)="nuevaTarea()" class="btn btn-outline-secondary" type="button">Nueva Tarea</button>
+    </div>
+</div>
 
 <ul class="list-group">
-    <li class="list-group-item" *ngFor="let tarea of tareas">{{tarea | json}}</li>    
-  </ul>
+    <li class="list-group-item" *ngFor="let tarea of tareas">
+      <input type="checkbox" checked="{{ tarea.terminado ? 'checked' : ''}}" />
+      <span *ngIf="!tarea.terminado">{{tarea.titulo}}</span>    
+      <span *ngIf="tarea.terminado"><del>{{tarea.titulo}}</del></span>
+    </li>    
+</ul>

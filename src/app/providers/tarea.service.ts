@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Tarea } from '../model/tarea';
 
 
 @Injectable({
@@ -19,6 +20,21 @@ export class TareaService {
     console.trace(`TareaService getAll ${this.endpoint}`);
     return this.http.get( this.endpoint );
   }
+
+  add(tarea: Tarea): Observable<any>{
+    console.trace(`TareaService add ${this.endpoint}`);
+    let body  = {
+          // "id": tarea.id,
+          "titulo": tarea.titulo,
+          "terminado": tarea.terminado
+        };  
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+    return this.http.post( this.endpoint, body , httpOptions );
+}
 
 
 }
