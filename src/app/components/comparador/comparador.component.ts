@@ -27,9 +27,14 @@ export class ComparadorComponent implements OnInit {
 
   ngOnInit() {
     console.trace('ComparadorComponent ngOnInit');    
-    this.frutas = this.frutaService.getAll();
-    this.f1 =  this.frutas[0];
-    this.f2 =  this.frutas[1];
+    this.frutaService.getAll().subscribe( data => {
+
+      this.frutas = data.map( el => el );
+      this.f1 =  this.frutas[0];
+      this.f2 =  this.frutas[1];
+
+    });
+    
 
   }
 

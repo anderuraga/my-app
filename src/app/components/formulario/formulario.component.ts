@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Fruta } from 'src/app/model/fruta';
+import { FrutaService } from 'src/app/providers/fruta.service';
 
 @Component({
   selector: 'app-formulario',
@@ -12,7 +13,7 @@ export class FormularioComponent implements OnInit {
  
   formulario: FormGroup; // formulario para agrupar inputs == FormControl
 
-  constructor() {
+  constructor( public frutaService: FrutaService ) {
     console.trace('FormularioComponent constructor');
 
     //agrupacion de controles == formulario
@@ -57,6 +58,10 @@ export class FormularioComponent implements OnInit {
     fruta.precio = this.formulario.controls.precio.value;
 
     console.debug('llamar provider pasando la fruta %o', fruta );
+
+    this.frutaService.add( fruta ).subscribe( data => {
+      console.debug('fruta creada %o', data);
+    });
 
   }
 

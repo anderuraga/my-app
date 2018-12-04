@@ -1,21 +1,46 @@
 {
-  "posts": [
+  "frutas": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "nombre": "Pera",
+      "precio": 3,
+      "calorias": 150,
+      "oferta": true,
+      "descuento": 10,
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFPyN6OEGcXtBU6QMcGRanSDDf1L4eO1K70hneyOiwXyyslkRY",
+      "cantidad": 0
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "nombre": "fresa",
+      "precio": 2.34,
+      "calorias": 150,
+      "oferta": true,
+      "descuento": 10,
+      "imagen": "https://media.mercola.com/assets/images/foodfacts/strawberry-nutrition-facts.jpg",
+      "cantidad": 0,
+      "id": 2
+    },
+    {
+      "nombre": "malacaton",
+      "precio": 2.34,
+      "calorias": 150,
+      "oferta": true,
+      "descuento": 10,
+      "imagen": "http://www.cajanature.com/405-large_default/pera-ecologica-.jpg",
+      "cantidad": 0,
+      "id": 3
+    },
+    {
+      "nombre": "otra cosa",
+      "precio": 2.34,
+      "calorias": 150,
+      "oferta": true,
+      "descuento": 10,
+      "imagen": "https://picsum.photos/200/300/?random",
+      "cantidad": 0,
+      "id": 4
     }
   ],
-  "profile": {
-    "name": "typicode"
-  },
   "tareas": [
     {
       "titulo": "Cuidado que se lo carga",
