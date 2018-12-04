@@ -1,0 +1,38 @@
+<h1>Formulario Reactivo</h1>
+<a href="https://angular.io/guide/reactive-forms" target="_blank">Documentación Oficial</a>
+
+
+
+<div class="row">
+  <button class="" (click)="cargarFormulario()">Cargar Formulario</button>
+</div>
+
+<div>
+    <p>Valores: {{ formulario.value | json }}</p>
+    <p>Estado:  {{ formulario.status | json }}</p> 
+</div>
+
+<div class="row">
+  <!-- importante desactivar las validaciones en HTML5 -->
+  <form [formGroup]="formulario" (ngSubmit)="sumitar()" novalidate>
+
+      <div class="form-group">         
+          <label for="nombre">Nombre:</label>
+          <input type="text" formControlName="nombre" class="form-control">
+          <small *ngIf="formulario.controls.nombre.invalid && formulario.controls.nombre.touched" class="form-text text-danger">Minimo 2 letras maximo 50</small>
+          <small *ngIf="formulario.controls.nombre.valid && formulario.controls.nombre.touched" class="form-text text-success">correcto</small>
+      </div>
+      
+
+      <div class="form-group">
+          <label for="precio">Precio:</label>
+          <input type="text" formControlName="precio" class="form-control">
+          <small class="form-text text-danger">Errores de validacion para precio</small>
+      </div>
+
+      <input type="submit" value="crear" class="btn btn-success" [disabled]="formulario.status === 'INVALID'">
+
+  </form>
+
+
+</div>  
