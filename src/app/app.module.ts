@@ -15,16 +15,18 @@ import { VideojuegoDetalleComponent } from './components/videojuego-detalle/vide
 import { PipeComponent } from './components/pipe/pipe.component';
 import { EjercicioFrutasComponent } from './components/ejercicio-frutas/ejercicio-frutas.component';
 import { TareaComponent } from './components/tarea/tarea.component';
+import { FrutaCardComponent } from './components/fruta-card/fruta-card.component';
+import { ComparadorComponent } from './components/comparador/comparador.component';
 
 // Pipes
 import { VideojuegoPipe } from './pipes/videojuego.pipe';
-import { FrutaCardComponent } from './components/fruta-card/fruta-card.component';
-import { ComparadorComponent } from './components/comparador/comparador.component';
+import { TareasPipe } from './pipes/tareas.pipe';
 
 
 // Providers o servicios
 import { FrutaService } from './providers/fruta.service';
 import { TareaService } from './providers/tarea.service';
+
 
 
 
@@ -41,7 +43,8 @@ import { TareaService } from './providers/tarea.service';
     EjercicioFrutasComponent,
     FrutaCardComponent,
     ComparadorComponent,
-    TareaComponent
+    TareaComponent,
+    TareasPipe
   ],
   imports: [
     BrowserModule,

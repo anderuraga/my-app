@@ -1,5 +1,8 @@
 <p>Ejemplo de crear un <b>Provider</b> o Service para realizar las operaciones de CRUD contra un <b>Servicio-Rest</b></p>
 
+
+<input (change)="filtrar()" type="checkbox" >{{textoFiltro}}
+
 <div class="input-group mb-3">
     <input type="text" [(ngModel)]="nueva" class="form-control" placeholder="Descripción">
     <div class="input-group-append">
@@ -7,10 +10,14 @@
     </div>
 </div>
 
+
+
+
 <ul class="list-group">
-    <li class="list-group-item" *ngFor="let tarea of tareas">
-      <input type="checkbox" checked="{{ tarea.terminado ? 'checked' : ''}}" />
-      <span *ngIf="!tarea.terminado">{{tarea.titulo}}</span>    
-      <span *ngIf="tarea.terminado"><del>{{tarea.titulo}}</del></span>
+    <li class="list-group-item" *ngFor="let tarea of tareas | completas : todas">
+      <input type="checkbox" checked="{{ tarea.terminado ? 'checked' : ''}}" (change)="terminar(tarea)" />
+      <span *ngIf="!tarea.terminado"> &nbsp; {{tarea.titulo}}</span>    
+      <span *ngIf="tarea.terminado"> &nbsp; <del>{{tarea.titulo}}</del></span>
+      <span class="fas fa-trash-alt float-right text-danger" (click)="eliminar( tarea.id )"></span>
     </li>    
 </ul>

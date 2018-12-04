@@ -37,4 +37,25 @@ export class TareaService {
 }
 
 
+delete( id: number ): Observable<any>{
+  let uri = this.endpoint + "/" + id 
+  console.trace(`TareaService delete ${uri}`);
+  return this.http.delete( uri );
+}
+
+marcarTerminado( tarea: Tarea ): Observable<any>{
+  let uri = this.endpoint + "/" + tarea.id;
+  console.trace(`TareaService marcarTerminado ${uri}`);
+  let body  = {           
+      "terminado": !tarea.terminado
+    };  
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json'
+    })
+  };
+  return this.http.patch( uri, body, httpOptions );
+}
+
+
 }

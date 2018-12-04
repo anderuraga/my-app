@@ -18,9 +18,9 @@
   },
   "tareas": [
     {
-      "id": 1,
-      "titulo": "cambiar Readme",
-      "terminado": false
+      "titulo": "Cuidado que se lo carga",
+      "terminado": false,
+      "id": 1
     },
     {
       "id": 2,
@@ -31,6 +31,11 @@
       "id": 3,
       "titulo": "Formulario Reactivos",
       "terminado": false
+    },
+    {
+      "titulo": "otra",
+      "terminado": true,
+      "id": 4
     }
   ]
 }

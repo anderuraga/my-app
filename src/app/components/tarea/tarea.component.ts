@@ -12,9 +12,15 @@ export class TareaComponent implements OnInit {
   tareas: Tarea[];
   nueva: string;
 
+  todas: boolean;
+  textoFiltro: string;
+
   constructor( public tareaService: TareaService ) {
     console.trace('TareaComponent constructor');
     this.tareas = [];
+    this.nueva = "";
+    this.todas = true;
+    this.textoFiltro = 'Todas';
   }
 
   ngOnInit() {
@@ -22,6 +28,11 @@ export class TareaComponent implements OnInit {
     this.recargarLista();
   }
 
+  filtrar(){
+    console.trace('TareaComponent filtrar');
+    this.todas = !this.todas;
+    this.textoFiltro = (this.todas)?'Todas':'Pendientes';
+  }
 
   recargarLista(){
     console.trace('TareaComponent recargarLista');    
@@ -33,12 +44,31 @@ export class TareaComponent implements OnInit {
   }
 
   nuevaTarea(){
-    console.trace('TareaComponent nuevaTarea');
-    let nuevaTarea = new Tarea();
-    nuevaTarea.titulo = this.nueva;
-    this.tareaService.add( nuevaTarea ).subscribe( data =>{
+    console.trace('TareaComponent nuevaTarea ' + this.nueva);
+    let tarea = new Tarea();
+    tarea.titulo = this.nueva;
+    this.tareaService.add( tarea ).subscribe( data =>{
       console.debug(data);
-      this.recargarLista();      
+      this.recargarLista();    
+      this.nueva = "";  
+    });
+  }
+
+
+  eliminar( id: number ){
+    console.trace(`TareaComponent eliminar ${id}` );
+    this.tareaService.delete(id).subscribe( data => {
+      console.debug('data %o', data);
+      this.recargarLista();    
+    });
+  }
+
+
+  terminar (tarea: Tarea){
+    console.trace('TareaComponent terminar %o', tarea );
+    this.tareaService.marcarTerminado(tarea).subscribe( data => {
+      console.debug('data %o', data);
+      this.recargarLista();    
     });
   }
 
