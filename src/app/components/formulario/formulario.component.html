@@ -18,13 +18,14 @@
 
     <div class="form-group">
         <label>Colores</label>
-        <button (click)="nuevoColor()">Nuevo</button>
+        <a (click)="nuevoColor()">Nuevo</a>
         <div formArrayName="colores">
             <div *ngFor="let color of formulario.get('colores').controls; let i = index;">                                       
                 <div [formGroupName]="i">
-                    <input formControlName="color" >
-                    <button (click)="eliminarColor(i)">Eliminar</button>
-                   <!-- <small *ngIf="formulario.get('colores').controls[i].invalid" class="form-text text-danger">Minimo 2 letras maximo 15</small> -->
+                    <input formControlName="color" >                    
+                    <button type="button" (click)="eliminarColor(i)">Eliminar</button>
+                    <small *ngIf="formulario.get('colores').controls[i].invalid" class="form-text text-danger">Minimo 2 letras maximo 15</small>
+                    <small *ngIf="formulario.get('colores').controls[i].valid" class="form-text text-success">correcto</small>
                 </div>                   
             </div>
         </div>

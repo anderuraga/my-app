@@ -1,3 +1,12 @@
-<p>
-  home works!
-</p>
+<h2>Pagina Principal</h2>
+
+<nav>
+  <ul>
+    <li><a [routerLink]="['../fruta']">Ir otro Componente </a></li>
+    <li><a [routerLink]="['../detalle', 3 ]">Ir otro Componente y pasar parametro :id=3</a></li>
+  </ul>
+</nav>
+
+
+<p>*navegagar mediante evento</p>
+<button (click)="navegar()" >Navegar mediante programación, parametro :id=5</button>

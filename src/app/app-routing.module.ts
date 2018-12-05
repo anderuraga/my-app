@@ -12,6 +12,7 @@ import { EjercicioFrutasComponent } from './components/ejercicio-frutas/ejercici
 import { ComparadorComponent } from './components/comparador/comparador.component';
 import { TareaComponent } from './components/tarea/tarea.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
+import { DetalleComponent } from './components/detalle/detalle.component';
 
 const routes: Routes = [
     { path: 'home', component: HomeComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
     { path: 'flujo', component: FlujoInformacionComponent},
     { path: 'tareas', component: TareaComponent},
     { path: 'comparador', component: ComparadorComponent},
+    { path: 'detalle/:id', component: DetalleComponent},
     { path: '',  redirectTo: '/home',  pathMatch: 'full'},
     { path: '**', component: Page404Component }
 ];

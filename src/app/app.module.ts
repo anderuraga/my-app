@@ -18,6 +18,7 @@ import { TareaComponent } from './components/tarea/tarea.component';
 import { FrutaCardComponent } from './components/fruta-card/fruta-card.component';
 import { ComparadorComponent } from './components/comparador/comparador.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
+import { DetalleComponent } from './components/detalle/detalle.component';
 
 // Pipes
 import { VideojuegoPipe } from './pipes/videojuego.pipe';
@@ -27,6 +28,7 @@ import { TareasPipe } from './pipes/tareas.pipe';
 // Providers o servicios
 import { FrutaService } from './providers/fruta.service';
 import { TareaService } from './providers/tarea.service';
+
 
 
 
@@ -47,7 +49,8 @@ import { TareaService } from './providers/tarea.service';
     ComparadorComponent,
     TareaComponent,
     TareasPipe,
-    FormularioComponent
+    FormularioComponent,
+    DetalleComponent
   ],
   imports: [
     BrowserModule,
