@@ -16,6 +16,23 @@
   <!-- importante desactivar las validaciones en HTML5 -->
   <form [formGroup]="formulario" (ngSubmit)="sumitar()" novalidate>
 
+    <div class="form-group">
+        <label>Colores</label>
+        <button (click)="nuevoColor()">Nuevo</button>
+        <div formArrayName="colores">
+            <div *ngFor="let color of formulario.get('colores').controls; let i = index;">                                       
+                <div [formGroupName]="i">
+                    <input formControlName="color" >
+                    <button (click)="eliminarColor(i)">Eliminar</button>
+                   <!-- <small *ngIf="formulario.get('colores').controls[i].invalid" class="form-text text-danger">Minimo 2 letras maximo 15</small> -->
+                </div>                   
+            </div>
+        </div>
+
+
+    </div>
+
+
       <div class="form-group">         
           <label for="nombre">Nombre:</label>
           <input type="text" formControlName="nombre" class="form-control">
@@ -26,9 +43,31 @@
 
       <div class="form-group">
           <label for="precio">Precio:</label>
-          <input type="text" formControlName="precio" class="form-control">
-          <small class="form-text text-danger">Errores de validacion para precio</small>
+          <input type="number" formControlName="precio" class="form-control" min="0" max="2" step="0.1">
+          <small *ngIf="formulario.controls.precio.invalid && formulario.controls.precio.touched" class="form-text text-danger">Minimo 0,1 letras maximo 999</small>
+          <small *ngIf="formulario.controls.precio.valid && formulario.controls.precio.touched" class="form-text text-success">Precio correcto</small>
       </div>
+      
+      <div class="form-group">
+            <label for="precio">Imagen:</label>
+            <img src="{{formulario.controls.imagen.value}}" alt="imagen destacada" class=""/>
+            <input type="text" placeholder="url imagen con extesion .png o .jp(e)g" formControlName="imagen" class="form-control" >
+            <small *ngIf="formulario.controls.imagen.invalid && formulario.controls.imagen.touched" class="form-text text-danger">formato inadecuado .png, .jpg o .jpeg</small>
+            <small *ngIf="formulario.controls.imagen.valid && formulario.controls.imagen.touched" class="form-text text-success">Precio correcto</small>
+        </div>
+  
+
+      <div class="form-group">
+
+        <input type="checkbox" formControlName="oferta">Oferta?
+
+        <div [hidden]="!formulario.controls.oferta.value">
+            <label for="precio">Descuento:</label>
+            <input type="number" formControlName="descuento" class="form-control" min="5" max="90" step="5" maxlength="2">
+            <small *ngIf="formulario.controls.descuento.invalid && formulario.controls.descuento.touched" class="form-text text-danger">Minimo 5% Maximo 90%</small>
+            <small *ngIf="formulario.controls.descuento.valid && formulario.controls.descuento.touched" class="form-text text-success">correcto</small>
+        </div>
+    </div>
 
       <input type="submit" value="crear" class="btn btn-success" [disabled]="formulario.status === 'INVALID'">
 
