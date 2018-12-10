@@ -13,6 +13,10 @@ import { ComparadorComponent } from './components/comparador/comparador.componen
 import { TareaComponent } from './components/tarea/tarea.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
 import { DetalleComponent } from './components/detalle/detalle.component';
+import { BackofficeComponent } from './components/backoffice/backoffice.component';
+import { LoginComponent } from './components/login/login.component';
+
+import { BackofficeGuard } from './guards/backoffice.guard';
 
 const routes: Routes = [
     { path: 'home', component: HomeComponent },
@@ -24,6 +28,8 @@ const routes: Routes = [
     { path: 'flujo', component: FlujoInformacionComponent},
     { path: 'tareas', component: TareaComponent},
     { path: 'comparador', component: ComparadorComponent},
+    { path: 'login', component: LoginComponent},
+    { path: 'privado', component: BackofficeComponent, canActivate: [BackofficeGuard]},
     { path: 'detalle/:id', component: DetalleComponent},
     { path: '',  redirectTo: '/home',  pathMatch: 'full'},
     { path: '**', component: Page404Component }

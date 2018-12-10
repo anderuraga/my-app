@@ -1,0 +1,39 @@
+<h2>Acceso Privado</h2>
+
+<p>usuario de prueba</p>
+<ul>
+  <li>nombre: <b>admin</b></li>
+  <li>password: <b>12345678</b></li>
+</ul>
+
+<p class="text-danger">{{ mensaje }}</p>
+
+<form [formGroup]="formulario" (ngSubmit)="sumitar()" novalidate>
+
+  <!-- 
+    <div>
+        <p>Valores: {{ formulario.value | json }}</p>
+        <p>Estado:  {{ formulario.status | json }}</p> 
+    </div>
+  -->  
+
+    <div class="form-group">         
+        <label for="nombre">Nombre:</label>
+        <input type="text" formControlName="nombre" class="form-control">
+        <small *ngIf="formulario.controls.nombre.invalid && formulario.controls.nombre.touched" class="form-text text-danger">Minimo 2 letras maximo 50</small>
+        <small *ngIf="formulario.controls.nombre.valid && formulario.controls.nombre.touched" class="form-text text-success">correcto</small>
+    </div>
+
+    <div class="form-group">         
+        <label for="nombre">Password:</label>
+        <input type="text" formControlName="password" class="form-control">
+        <small *ngIf="formulario.controls.password.invalid && formulario.controls.password.touched" class="form-text text-danger">Minimo 6 letras maximo 50</small>
+        <small *ngIf="formulario.controls.password.valid && formulario.controls.password.touched" class="form-text text-success">correcto</small>
+    </div>
+
+      <input type="submit" 
+             value="Entrar" 
+             class="btn btn-success" 
+             [disabled]="formulario.status === 'INVALID'">
+
+</form>
