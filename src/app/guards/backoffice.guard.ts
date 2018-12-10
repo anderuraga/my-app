@@ -21,13 +21,14 @@ export class BackofficeGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 
     console.trace('BackofficeGuard canActivate');
-    
+    /*
     if ( !this.loginService.isLogged() ){            
       this.router.navigate(['login']);
       return false;
-    }
+    }*/
 
-    return true;
+    // Ahora retornamos un observable y no usamos router => ponemos varias rutas de navegacion con *ngIf
+    return this.loginService.isLogged();
     
   }
 }

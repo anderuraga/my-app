@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Usuario } from './model/usuario';
+import { LoginService } from './providers/login.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +12,21 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   title = 'Primera App Angular';
-  autor = 'Ander';
+  autor = 'Ander'; 
+  logeado: boolean;
+
+  constructor( private loginService: LoginService){
+    this.logeado = false;
+  }
+
+  ngOnInit() {
+    console.trace('AppComponent ngOnInit');    
+    this.loginService.isLogged().subscribe( v => this.logeado = v );
+  }
+
+  cerrar(){
+    this.loginService.logout();
+  }
 
 
 }
