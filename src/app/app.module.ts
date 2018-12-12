@@ -33,9 +33,11 @@ import { FrutaService } from './providers/fruta.service';
 import { TareaService } from './providers/tarea.service';
 import { LoginService } from './providers/login.service';
 
-
 // Guards
 import {BackofficeGuard} from './guards/backoffice.guard';
+
+// Directivas
+import { DestacarDirective } from './directives/destacar.directive';
 
 
 
@@ -59,7 +61,8 @@ import {BackofficeGuard} from './guards/backoffice.guard';
     FormularioComponent,
     DetalleComponent,
     BackofficeComponent,
-    LoginComponent
+    LoginComponent,
+    DestacarDirective
   ],
   imports: [
     BrowserModule,
